@@ -1,6 +1,6 @@
 import React from 'react'
 import Polls from '../components/Polls'
-import { BASE_ASSET_URL } from '../utils';
+import { BASE_ASSET_URL, getImageUrl } from '../utils';
 import date from "date-and-time"
 
 const PollsDetsilCommon = ({poll}) => {
@@ -16,7 +16,7 @@ const PollsDetsilCommon = ({poll}) => {
     
     <div className="details-container" key={poll._id}>
           <div className="image-container" style={{marginTop:"5rem",display:"flex",justifyContent:"left"}}>
-          <img src={`${BASE_ASSET_URL}/${poll.featured_image.filename}`} alt="Image" style={{width:"900px", }}/>
+          <img src={getImageUrl(poll.featured_image)} alt="Image" style={{width:"900px", }}/>
           </div>
           {/* <h3 style={{textAlign:'center'}}>{data.heading}</h3> */}
       

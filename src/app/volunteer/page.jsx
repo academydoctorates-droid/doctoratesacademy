@@ -1,6 +1,6 @@
 import axios from "axios";
 import Header from "../components/header";
-import { BASE_ASSET_URL } from "../utils";
+import { BASE_ASSET_URL, getImageUrl } from "../utils";
 import CustomHeader from "../components/mobileHeader";
 import Accordion from "../components/acordian";
 import { Footer } from "../components/Footer";
@@ -148,7 +148,7 @@ const page = async () => {
                             //   minWidth: "40px",
                             //   borderRadius: "100%",
                             // }}
-                            src={`${BASE_ASSET_URL}/${item.profileImage.filename}`}
+                            src={getImageUrl(item.profileImage)}
                           />
                         ) : (
                           <img

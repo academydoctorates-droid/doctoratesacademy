@@ -1,6 +1,6 @@
 import axios from "axios";
 import Header from "../components/header";
-import { BASE_ASSET_URL } from "../utils";
+import { BASE_ASSET_URL, getImageUrl } from "../utils";
 import CustomHeader from "../components/mobileHeader";
 
 const getPostData = async () => {
@@ -107,7 +107,7 @@ const page = async () => {
                           <img
                             alt="Card image cap "
                             className="member-img"
-                            src={`${BASE_ASSET_URL}/${item.thumbnail_image.filename}`}
+                            src={getImageUrl(item.thumbnail_image)}
                           />
                         ) : (
                           <img

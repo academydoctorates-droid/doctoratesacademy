@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import useLocalStorage from "./../components/StorageHook";
 import axios from "axios";
-import { BASE_ASSET_URL } from "../utils";
+import { BASE_ASSET_URL, getImageUrl } from "../utils";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import MandatoryForLogin from "./MandatoryForLogin";
@@ -363,7 +363,7 @@ const Header = () => {
                                       marginRight: "17px",
                                       // marginTop: "5px",
                                     }}
-                                    src={`${BASE_ASSET_URL}/${suggestion.profileImage.filename}`}
+                                    src={getImageUrl(suggestion.profileImage)}
                                     alt=""
                                   />
                                   {suggestion.firstName} {suggestion.familyName},{" "}
@@ -390,7 +390,7 @@ const Header = () => {
                                       marginRight: "17px",
                                       marginTop: "5px",
                                     }}
-                                    src={`${BASE_ASSET_URL}/${suggestion.profileImage.filename}`}
+                                    src={getImageUrl(suggestion.profileImage)}
                                     alt=""
                                   />
                                   {suggestion.firstName},{" "}

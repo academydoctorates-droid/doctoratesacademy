@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import { BASE_ASSET_URL } from '../utils';
+import { BASE_ASSET_URL, getImageUrl } from '../utils';
 import date from 'date-and-time';
 import PollsDetsilCommon from "../components/PollsDetsilCommon";
 import { Tabs, Tab, CircularProgress } from "@mui/material";
@@ -45,7 +45,7 @@ const PostDetails = ({ data }) => {
                   {post.featured_image && (
                     <div className="post-image-container">
                       <img
-                        src={`${BASE_ASSET_URL}/${post.featured_image.filename}`}
+                        src={getImageUrl(post.featured_image)}
                         alt={post.short_description || "Post image"}
                         className="post-image"
                         loading="lazy"

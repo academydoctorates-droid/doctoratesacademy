@@ -7,7 +7,7 @@ import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import useGetFetch from "./../components/useGetFetch";
-import { BASE_ASSET_URL } from "../utils";
+import { BASE_ASSET_URL, getImageUrl } from "../utils";
 const items = [
   { id: 1, imageUrl: "tab1.jpg" },
   { id: 2, imageUrl: "tab1b.jpg" },
@@ -96,11 +96,11 @@ const GalleryCarousel = () => {
             <div className="gallery_box">
               <div className="cpl_image cpl_new">
                 <a
-                  href={`${BASE_ASSET_URL}/${item.image.filename}`}
+                  href={getImageUrl(item.image)}
                   data-fancybox="images"
                 >
                   <img
-                    src={`${BASE_ASSET_URL}/${item.image.filename}`}
+                    src={getImageUrl(item.image)}
                     className="img-responsive center-block"
                     alt=""
                     style={{height:350}}

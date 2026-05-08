@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react";
 import MembersCarousel from "./memberscarousel";
 import GalleryCarousel from "./gallerycarousel";
-import { BASE_ASSET_URL } from "../utils";
+import { BASE_ASSET_URL, getImageUrl } from "../utils";
 import date from "date-and-time";
 import OpinionModal from "./OpinionModal";
 import { IconButton } from "@mui/material";
@@ -198,7 +198,7 @@ const Events = ({ faqdata }) => {
                     <div className="blue_item_wrap">
                       <div className="blue_left flex-child">
                         <img
-                          src={`${BASE_ASSET_URL}/${event.thumbnail_image.filename}`}
+                          src={getImageUrl(event.thumbnail_image)}
                           className="img-responsive"
                           alt=""
                         />
@@ -292,7 +292,7 @@ const Events = ({ faqdata }) => {
                     <div className="blue_item_wrap">
                       <div className="blue_left flex-child">
                         <img
-                          src={`${BASE_ASSET_URL}/${opinion?.thumbnail_image.filename}`}
+                          src={getImageUrl(opinion?.thumbnail_image)}
                           className="img-responsive"
                           alt=""
                         />
@@ -356,7 +356,7 @@ const Events = ({ faqdata }) => {
                     <div className="blue_left flex-child">
                       {" "}
                       <img
-                        src={`${BASE_ASSET_URL}/${event?.thumbnail_image.filename}`}
+                        src={getImageUrl(event?.thumbnail_image)}
                         className="img-responsive"
                         alt=""
                       />{" "}
@@ -402,9 +402,9 @@ const Events = ({ faqdata }) => {
                       style={{ position: "relative" }}
                     >
                       {" "}
-                      {event?.thumbnail_image.filename ? (
+                      {event?.thumbnail_image ? (
                         <img
-                          src={`${BASE_ASSET_URL}/${event?.thumbnail_image.filename}`}
+                          src={getImageUrl(event.thumbnail_image)}
                           className="img-responsive"
                           alt=""
                         />
@@ -459,7 +459,7 @@ const Events = ({ faqdata }) => {
                     <div className="blue_left flex-child">
                       {" "}
                       <img
-                        src={`${BASE_ASSET_URL}/${event?.thumbnail_image.filename}`}
+                        src={getImageUrl(event?.thumbnail_image)}
                         className="img-responsive"
                         alt=""
                       />{" "}

@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import Header from "../components/header";
 import { Footer } from "../components/Footer";
 import MandatoryForLogin from "../components/MandatoryForLogin";
-import { BASE_ASSET_URL } from "../utils";
+import { BASE_ASSET_URL, getImageUrl } from "../utils";
 import { Tabs, Tab, CircularProgress } from "@mui/material";
 
 const PUBLICATION_TYPES = ["All", "Books", "Reports", "Declarations", "Brochures", "Souvenir"];
@@ -74,7 +74,7 @@ const Page = () => {
                 <div className="publication-card" key={item._id}>
                   <div className="publication-image-container">
                     <img
-                      src={item.thumbnail_image ? `${BASE_ASSET_URL}/${item.thumbnail_image.filename}` : "images/doc1.jpg"}
+                      src={item.thumbnail_image ? getImageUrl(item.thumbnail_image) : "images/doc1.jpg"}
                       alt="Publication Thumbnail"
                       className="publication-image"
                     />
@@ -87,7 +87,7 @@ const Page = () => {
                     <p className="publication-description">{item.short_description}</p>
                     {item.file && (
                       <a
-                        href={`${BASE_ASSET_URL}/${item.file.filename}`}
+                        href={getImageUrl(item.file)}
                         className="download-button"
                         target="_blank"
                         rel="noopener noreferrer"

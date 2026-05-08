@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import useGetFetch from "./useGetFetch";
-import { BASE_ASSET_URL } from "../utils";
+import { BASE_ASSET_URL, getImageUrl } from "../utils";
 
 const MembersCarousel = () => {
 
@@ -93,9 +93,9 @@ const MembersCarousel = () => {
         {members.slice(0,10).map((member, index) => (
           <div key={member._id} className="item">
             <div className="member_div">
-              {member.profileImage.filename ? (
+              {member.profileImage && (member.profileImage.filename || member.profileImage.path) ? (
                 <img
-                  src={`${BASE_ASSET_URL}/${member.profileImage.filename}`}
+                  src={getImageUrl(member.profileImage)}
                   className="img-responsive member-image"
                   alt=""
                 />

@@ -5,7 +5,7 @@ import React from "react";
 import Header from "../components/header";
 import { Footer } from "../components/Footer";
 import axios from "axios";
-import { BASE_ASSET_URL } from "../utils";
+import { BASE_ASSET_URL, getImageUrl } from "../utils";
 import CustomHeader from "../components/mobileHeader";
 
 const getActivitiesData = async () => {
@@ -152,7 +152,7 @@ const page = async () => {
                                         data-fancybox="images"
                                       >
                                         <img
-                                          src={`${BASE_ASSET_URL}/${image.filename}`}
+                                          src={getImageUrl(image)}
                                           className="img-responsive center-block image_size"
                                           alt=""
                                         />

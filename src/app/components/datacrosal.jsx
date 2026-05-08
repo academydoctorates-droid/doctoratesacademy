@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import tr from "date-and-time/locale/tr";
 import useGetFetch from "./useGetFetch";
-import { BASE_ASSET_URL } from "../utils";
+import { BASE_ASSET_URL, getImageUrl } from "../utils";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
 import MandatoryForLogin from "./MandatoryForLogin";
@@ -152,7 +152,7 @@ console.log("token->", tokenId)
 
                 {item.profileImage ? (
           <img
-            src={`${BASE_ASSET_URL}/${item.profileImage.filename}`}
+            src={getImageUrl(item.profileImage)}
             className="center-block member-header-img"
             alt=""
           />
@@ -187,7 +187,7 @@ console.log("token->", tokenId)
               /> */}
           {item.profileImage.filename ? (
           <img
-            src={`${BASE_ASSET_URL}/${item.profileImage.filename}`}
+            src={getImageUrl(item.profileImage)}
             className="center-block member-header-img"
             alt=""
           />
@@ -217,7 +217,7 @@ console.log("token->", tokenId)
           <div className="phd_box">
             <Link href={`viewProfile/${item._id}`}>
               <img
-                src={`${BASE_ASSET_URL}/${item.profileImage.filename}`}
+                src={getImageUrl(item.profileImage)}
                 className="center-block member-header-img"
                 alt=""
               />
