@@ -1,0 +1,20 @@
+---Public access / private access
+--filters on members
+---active page color
+---on membership form present position
+---members list to be downloaded with emails
+---search 
+ -- members name
+ --specialication
+ -- keywords
+ --city
+ --country
+
+ --entity too large error
+ --payment 
+ --member id should be generated only after payment
+ --
+
+ --Polls opinion and notifications are only for login members
+ --for conference page 
+  -- events annoucements and conference reports
